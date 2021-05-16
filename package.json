@@ -1,0 +1,28 @@
+{
+  "name": "fendi-clonish-nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
+    "classnames": "^2.3.1",
+    "formik": "^2.2.6",
+    "lodash": "^4.17.21",
+    "next": "10.2.0",
+    "nprogress": "^0.2.0",
+    "postcss": "^8.2.13",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-icons": "^4.2.0",
+    "react-slick": "^0.28.1",
+    "react-use": "^17.2.4",
+    "slick-carousel": "^1.8.1",
+    "swr": "^0.5.5",
+    "tailwindcss": "^2.1.2"
+  }
+}

@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply font-proxima-nova text-12/16 text-gray-800 tracking-wider;
+	}
+
+	@font-face {
+		font-family: 'Proxima Nova';
+		font-display: swap;
+		font-weight: 400;
+		src: url('/webfonts/proxima-nova-400.woff2') format('woff2');
+	}
+
+	@font-face {
+		font-family: 'Proxima Nova';
+		font-display: swap;
+		font-weight: 600;
+		src: url('/webfonts/proxima-nova-600.woff2') format('woff2');
+	}
+}
+
+/* NProgress */
+@layer components {
+	/* 111827 => gray-900 */
+	/* f9b949 => primary yellow */
+
+	#nprogress .bar {
+		/* height: 5px; */
+		background: #111827;
+		display: none;
+	}
+
+	#nprogress .peg {
+		box-shadow: 0 0 10px #111827, 0 0 5px #111827;
+	}
+
+	#nprogress .spinner-icon {
+		border-top-color: #111827;
+		border-left-color: #111827;
+	}
+}
+
+/* Navbar Mega Menu */
+@layer components {
+	.navbar-mega-menu {
+		@apply absolute inset-0 flex items-center justify-center tracking-wider;
+	}
+
+	.navbar-mega-menu a {
+		@apply block;
+	}
+
+	.navbar-mega-menu a:hover {
+		@apply underline;
+	}
+
+	.navbar-mega-menu > ul {
+		@apply relative container flex flex-row items-stretch justify-center self-stretch mx-auto;
+	}
+
+	.navbar-mega-menu > ul > li {
+		@apply flex items-center justify-center px-4;
+	}
+
+	.navbar-mega-menu > ul > li > a {
+		@apply relative pointer-events-none text-gray-500 font-bold py-2;
+	}
+
+	.navbar-mega-menu > ul > li > a,
+	.navbar-mega-menu > ul > li:hover > a {
+		@apply transform transition-colors duration-200 ease-in;
+	}
+
+	.navbar-mega-menu > ul > li > a:after {
+		content: "";
+	
+		@apply absolute bottom-0 left-1/2 block w-0 h-1 transform -translate-x-1/2 -translate-y-1/2 bg-primary;
+	}
+
+	.navbar-mega-menu > ul > li > a:after,
+	.navbar-mega-menu > ul > li:hover > a:after {
+		@apply transform -translate-x-1/2 -translate-y-1/2 duration-200 ease-in;
+	}
+
+	.navbar-mega-menu > ul > li > ul {
+		@apply absolute left-0 right-0 top-full bg-white border-b hidden items-start justify-center gap-12 p-8 z-50;
+	}
+
+	.navbar-mega-menu > ul > li:hover > a {
+		@apply text-gray-800;
+	}
+
+	.navbar-mega-menu > ul > li:hover > a:after {
+		@apply w-full;
+	}
+
+	.navbar-mega-menu > ul > li:hover > ul {
+		@apply flex;
+	}
+
+	.navbar-mega-menu.no-dropdown > ul > li > ul {
+		@apply hidden;
+	}
+
+	.navbar-mega-menu > ul > li > ul > li > a {
+		@apply font-bold tracking-widest border-l-4 border-primary pl-2;
+	}
+
+	.navbar-mega-menu > ul > li > ul > li > .cover {
+		@apply block w-full mt-2;
+	}
+
+	.navbar-mega-menu > ul > li > ul > li > .cover img {
+		@apply block;
+	}
+
+	.navbar-mega-menu > ul > li > ul > li > ul {
+		@apply flex flex-col gap-2 mt-3;
+	}
+}
